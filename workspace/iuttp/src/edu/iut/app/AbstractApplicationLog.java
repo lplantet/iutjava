@@ -1,12 +1,13 @@
 package edu.iut.app;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public abstract class AbstractApplicationLog implements IApplicationLog {
 
 	protected String message;
 	/** TP1 : Tableau au sens des collections **/
-	protected /*TYPE TABLEAU*/ listeners;
+	protected ArrayList <IApplicationLogListener> listeners;
 	
 	public AbstractApplicationLog() {
 		message = null;
@@ -14,7 +15,8 @@ public abstract class AbstractApplicationLog implements IApplicationLog {
 	}
 	
     /** TP1 : Fonction venant de l'interface par héritage */
-
+	public abstract void setMessage(String message);
+	
 
 	/** Listener action */
 	protected void fireMessage(String level, String message) {
