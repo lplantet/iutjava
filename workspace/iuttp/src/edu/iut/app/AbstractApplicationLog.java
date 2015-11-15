@@ -1,4 +1,4 @@
-package edu.iut.app;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +11,7 @@ public abstract class AbstractApplicationLog implements IApplicationLog {
 	
 	public AbstractApplicationLog() {
 		message = null;
-		listeners = new /*TYPE TABLEAU*/();
+		listeners = new ArrayList<IApplicationLogListener>/*TYPE TABLEAU*/();
 	}
 	
     /** TP1 : Fonction venant de l'interface par héritage */
@@ -24,4 +24,13 @@ public abstract class AbstractApplicationLog implements IApplicationLog {
 			listener_i.newMessage(level, message);
 		}
 	}
+
+	public ArrayList<IApplicationLogListener> getListeners() {
+		return listeners;
+	}
+
+	public void AddListeners(IApplicationLogListener listener) {
+		this.listeners.add(listener);
+	}
+	
 }
