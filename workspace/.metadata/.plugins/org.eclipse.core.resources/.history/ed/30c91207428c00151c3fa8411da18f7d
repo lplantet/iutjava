@@ -1,0 +1,7 @@
+package IUTTrainTP2.src.edu.iut.app;
+
+//package edu.iut.app;
+
+public interface IApplicationLogListener {
+	public void newMessage(String level, String message);
+}
