@@ -1,23 +1,27 @@
 package edu.iut.gui.widget.agenda;
 
 import java.awt.GridLayout;
+import java.util.ResourceBundle;
+
 import javax.swing.JPanel;
 
 
-import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
 
+import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
+import edu.iut.app.ApplicationSession;
 
 public class WeekPanel extends EventPanel {
 
+	// Exercice 4
 	public enum WeekDayNames {
 		EMPTYDAY("",""),
-		MONDAY("monday","mon"),
-		TUESDAY("tuesday","tue"),
-		WEDNESDAY("wednesday","wed"),
-		THURSDAY("thursday","thu"),
-		FRIDAY("friday","fri"),
-		SATURDAY("saturday","sat"),
-		SUNDAY("sunday","sun");
+		MONDAY(ApplicationSession.instance().getString("monday"), ApplicationSession.instance().getString("mon")/* Internationalisation */),
+		TUESDAY(ApplicationSession.instance().getString("tuesday"), ApplicationSession.instance().getString("tue")/* Internationalisation */),
+		WEDNESDAY(ApplicationSession.instance().getString("wednesday"), ApplicationSession.instance().getString("wed")/* Internationalisation */),
+		THURSDAY(ApplicationSession.instance().getString("thursday"), ApplicationSession.instance().getString("thu")/* Internationalisation */),
+		FRIDAY(ApplicationSession.instance().getString("friday"), ApplicationSession.instance().getString("fri")/* Internationalisation */),
+		SATURDAY(ApplicationSession.instance().getString("saturday"), ApplicationSession.instance().getString("sat")/* Internationalisation */),
+		SUNDAY(ApplicationSession.instance().getString("sunday"), ApplicationSession.instance().getString("sun")/* Internationalisation */);
 		
 		private String name;
 		private String shortName;

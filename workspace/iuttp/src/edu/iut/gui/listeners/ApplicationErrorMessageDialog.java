@@ -1,16 +1,13 @@
-//package edu.iut.gui.listeners;
+package edu.iut.gui.listeners;
 
 import javax.swing.JOptionPane;
 
 public class ApplicationErrorMessageDialog extends
 		AbstractApplicationMessageDialog {
-	
-	JOptionPane jop;
+
 	@Override
 	protected void showMessage(String level, String message) {
-		/** UTILISER l'AIDE FORUNIR DANS L'ENNONCE */
-		jop = new JOptionPane();
-		jop.showMessageDialog(null, message, "Erreur", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, message, level, JOptionPane.ERROR_MESSAGE, null);
 	}
 
 }
