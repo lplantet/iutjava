@@ -1,0 +1,22 @@
+package edu.iut.app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CriteriaJury implements Criteria {
+
+   @Override
+   public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent ) {
+      List<Person> juryPersons = new ArrayList<Person>(); 
+      List<Person> Persons = ((ExamEvent) examEvent).getJury();
+     
+      for (Person person : juryPersons) {
+         if(person.getFunction() == "Jury"){
+            juryPersons.add(person);
+         }
+      }
+      
+      
+      return juryPersons;
+   }
+}

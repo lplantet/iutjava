@@ -8,7 +8,7 @@ public class Person {
 		JURY("Jury"),
 		STUDENT("Student");
 		
-		private String personFunction;
+		public String personFunction;
 		
 		PersonFunction(String personFunction) {
 			this.personFunction = personFunction;
