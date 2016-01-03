@@ -1,0 +1,52 @@
+package edu.iut.io;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+import javax.lang.model.element.Element;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.*;
+import org.xml.sax.*;
+
+import edu.iut.app.Classroom;
+import edu.iut.app.Document;
+import edu.iut.app.ExamEvent;
+import edu.iut.app.Person;
+
+import org.w3c.dom.*;
+
+//EX 1 Completer la classe 
+
+public class XMLProjectWriter {
+	
+	private Date ExamDate = null;
+	private Person student = null;
+	private ArrayList<Person> jury = null;
+	private Classroom classroom = null;
+	private ArrayList<Document> documents;
+	
+	public XMLProjectWriter() {		
+	}
+	
+	public void save(ArrayList<ExamEvent> data, java.io.File xmlfile) {
+		Document dom;
+	    Element e = null;
+	    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+	    DocumentBuilder db;
+		try {
+			db = dbf.newDocumentBuilder();
+			dom = (Document) db.newDocument();
+			Element rootEle = dom.createElement("ExamEvent");
+		}
+		catch (ParserConfigurationException e1) {
+			// TODO Auto-generated catch block
+		
+		}
+	}
+}

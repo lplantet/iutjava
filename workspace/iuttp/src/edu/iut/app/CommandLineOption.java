@@ -20,35 +20,25 @@ public class CommandLineOption<ValueType> {
 		}		
 	}
 	
-	protected String key;
-	protected String description;
-	protected ValueType defaultValue;
-	protected ValueType value;
-	protected OptionType optionType;
-	
 	public CommandLineOption() {		
-		/* EX1: Initializer les attributs */
-		this.key = "";
-		this.description ="";
-		this.defaultValue = (ValueType) OptionType.NOVALUE;
-		this.value = (ValueType) OptionType.NOVALUE;
-		this.optionType = OptionType.NOVALUE;
-
+		key = null;
+		description = null;
+		defaultValue = null;
+		value = null;
+		optionType = OptionType.NONE;
 	}
 	public CommandLineOption(final OptionType optionType, final String key, final String description, final ValueType defaultValue) {
-		/* EX1 : Affecter les attributs */
 		this.key = key;
-		this.description =description;
+		this.description = description;
 		this.defaultValue = defaultValue;
-		this.value = defaultValue;
 		this.optionType = optionType;
+		this.value = null;
 	}
 	public void setOption(OptionType optionType, String key, String description, ValueType defaultValue) {
-		/* EX1 : Affecter les attributs */
 		this.key = key;
-		this.description =description;
+		this.description = description;
 		this.defaultValue = defaultValue;
-		this.value = defaultValue;
+		this.value = null;
 		this.optionType = optionType;
 	}
 	public  void setValue(ValueType value) {
@@ -71,7 +61,11 @@ public class CommandLineOption<ValueType> {
 		return optionType;
 	}
 
-
+	protected String key;
+	protected String description;
+	protected ValueType defaultValue;
+	protected ValueType value;
+	protected OptionType optionType;
 	
 
 }
